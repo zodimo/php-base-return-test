@@ -1,0 +1,44 @@
+{
+  "name": "zodimo/base-return-test",
+  "description": "Basic types that communicates the possibility of failure and optional values.",
+  "type": "library",
+  "license": "mit",
+  "autoload": {
+    "psr-4": {
+      "Zodimo\\BaseReturnTest\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Zodimo\\BaseReturnTest\\Tests\\": "tests/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Jaco Labuschagne",
+      "email": "zodimo@gmail.com"
+    }
+  ],
+  "require": {
+    "php": "~7.4|~8",
+    "phpunit/phpunit": "^9.6"
+  },
+  "require-dev": {
+    "phpstan/phpstan": "^1.11",
+    "friendsofphp/php-cs-fixer": "^3.62"
+  },
+  "scripts": {
+    "test": [
+      "Composer\\Config::disableProcessTimeout",
+      "php ./vendor/bin/phpunit"
+    ],
+    "cs-fix": [
+      "Composer\\Config::disableProcessTimeout",
+      "php ./vendor/bin/php-cs-fixer --allow-risky=yes fix "
+    ],
+    "stan": [
+      "Composer\\Config::disableProcessTimeout",
+      "php ./vendor/bin/phpstan analyse"
+    ]
+  }
+}

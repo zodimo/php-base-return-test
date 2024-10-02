@@ -1,6 +1,6 @@
 ARG PHP_EXTENSIONS=""
 
-FROM thecodingmachine/php:7.4-v4-fpm-node20
+FROM thecodingmachine/php:8.1-v4-fpm-node20
 
 USER docker
 

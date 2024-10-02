@@ -6,6 +6,9 @@ namespace Zodimo\BaseReturnTest;
 
 use PHPUnit\Framework\MockObject\MockObject;
 
+/**
+ * @phpstan-require-extends \PHPUnit\Framework\TestCase
+ */
 trait MockClosureTrait
 {
     /**
@@ -13,14 +16,10 @@ trait MockClosureTrait
      */
     public function createClosureMock()
     {
-        return $this
-            ->getMockBuilder(\stdClass::class)
-            ->addMethods(['__invoke'])
-            ->getMock()
-        ;
+        return $this->createMock(CallableMock::class);
     }
 
-     /**
+    /**
      * @return callable&MockObject $mockClosure
      */
     public function createClosureNotCalled()
